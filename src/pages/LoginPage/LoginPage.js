@@ -15,6 +15,8 @@ export default function LoginPage() {
         // đưa data lên redux
         console.log(res);
         dispatch(setInfoUser(res.data.content));
+        // lưu data vào localStorage
+        localStorage.setItem("USER_INFO", JSON.stringify(res.data.content));
         navigate("/");
       })
       .catch((err) => {

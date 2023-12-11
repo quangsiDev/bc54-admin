@@ -9,5 +9,6 @@ export let https = axios.create({
   baseURL: "https://movienew.cybersoft.edu.vn",
   headers: {
     TokenCybersoft: TOKEN,
+    Authorization: "bearer " + JSON.parse(localStorage.getItem("USER_INFO"))?.accessToken,
   },
 });
